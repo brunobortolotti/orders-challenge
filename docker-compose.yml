@@ -13,6 +13,9 @@ services:
       - ./:/usr/src/app
     environment:
       - RAILS_ENV=development
+      - POSTGRES_HOST=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=dbpasswd
     ports:
       - 3001:3000
     depends_on:
