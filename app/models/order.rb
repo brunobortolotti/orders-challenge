@@ -2,6 +2,8 @@ class Order < ApplicationRecord
   belongs_to :customer
   has_many :order_items
 
+  validates :total_amount, presence: true
+
   enum :order_status, {
     pending: 'pending',
     completed: 'completed'

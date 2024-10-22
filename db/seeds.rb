@@ -9,9 +9,6 @@ ActiveRecord::Base.transaction do
     name: 'Clay',
     email: 'clay@example.com'
 
-  category_clothes = Category.create! \
-    name: 'Clothes'
-
   category_food = Category.create! \
     name: 'Food'
 
@@ -23,7 +20,6 @@ ActiveRecord::Base.transaction do
 
   category_event_tickets = Category.create! \
     name: 'Event Tickets'
-
 
   product_iphone = Product.create! \
     name: 'iPhone 16 Pro Max',
