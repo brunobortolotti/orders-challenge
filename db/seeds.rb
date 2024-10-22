@@ -109,6 +109,60 @@ ActiveRecord::Base.transaction do
       { product: product_shirt, quantity: 12 }
     ]
 
+  OrdersService::CreateOrder.call \
+    customer: customer_clay,
+    payment_status: :paid,
+    line_items: [
+      { product: product_dress, quantity: 1 },
+      { product: product_shirt, quantity: 5 }
+    ]
+
+  OrdersService::CreateOrder.call \
+    customer: customer_clay,
+    payment_status: :paid,
+    line_items: [
+      { product: product_superbowl_ticket, quantity: 2 },
+      { product: product_ticket, quantity: 7 }
+    ]
+
+  OrdersService::CreateOrder.call \
+    customer: customer_clay,
+    payment_status: :paid,
+    line_items: [
+      { product: product_dress, quantity: 5 },
+      { product: product_ticket, quantity: 9 }
+    ]
+
+  OrdersService::CreateOrder.call \
+    customer: customer_clay,
+    payment_status: :paid,
+    line_items: [
+      { product: product_iphone, quantity: 8 },
+    ]
+
+  OrdersService::CreateOrder.call \
+    customer: customer_clay,
+    payment_status: :paid,
+    line_items: [
+      { product: product_ticket, quantity: 1 }
+    ]
+
+  OrdersService::CreateOrder.call \
+    customer: customer_clay,
+    payment_status: :paid,
+    line_items: [
+      { product: product_cheese, quantity: 8 },
+      { product: product_iphone, quantity: 4 }
+    ]
+
+  OrdersService::CreateOrder.call \
+    customer: customer_clay,
+    payment_status: :payment_declined,
+    line_items: [
+      { product: product_superbowl_ticket, quantity: 1 },
+      { product: product_shirt, quantity: 1 }
+    ]
+
 rescue ActiveRecord::RecordInvalid => e
   puts e.record.errors.full_messages
 
