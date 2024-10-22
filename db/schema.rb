@@ -30,10 +30,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_21_232923) do
   create_table "order_items", force: :cascade do |t|
     t.bigint "order_id", null: false
     t.bigint "product_id", null: false
-    t.integer "quantity"
-    t.decimal "product_unit_price"
-    t.decimal "discount_amount"
-    t.decimal "total_amount"
+    t.integer "quantity", default: 0, null: false
+    t.decimal "unit_price", default: "0.0", null: false
+    t.decimal "total_amount", default: "0.0", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -43,19 +42,15 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_21_232923) do
     t.string "order_status", null: false
     t.string "payment_status", null: false
     t.string "fulfillment_status", null: false
-    t.decimal "total_items_amount"
-    t.decimal "total_discount_amount"
-    t.decimal "total_final_amount"
+    t.decimal "total_amount", default: "0.0", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "product_type", null: false
     t.string "name", null: false
     t.text "description"
-    t.decimal "default_price", null: false
-    t.decimal "sale_price"
+    t.decimal "price", default: "0.0", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id", null: false

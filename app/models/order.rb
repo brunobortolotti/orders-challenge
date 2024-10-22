@@ -10,7 +10,7 @@ class Order < ApplicationRecord
   enum :payment_status, {
     awaiting_payment: 'awaiting_payment',
     payment_declined: 'payment_declined',
-    paid: 'payd'
+    paid: 'paid'
   }, prefix: true, default: :awaiting_payment
 
   enum :fulfillment_status, {

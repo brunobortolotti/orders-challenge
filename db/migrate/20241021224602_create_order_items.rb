@@ -3,10 +3,9 @@ class CreateOrderItems < ActiveRecord::Migration[7.0]
     create_table :order_items do |t|
       t.bigint :order_id, null: false
       t.bigint :product_id, null: false
-      t.integer :quantity
-      t.decimal :product_unit_price
-      t.decimal :discount_amount
-      t.decimal :total_amount
+      t.integer :quantity, null: false, default: 0
+      t.decimal :unit_price, null: false, default: 0
+      t.decimal :total_amount, null: false, default: 0
 
       t.timestamps
     end
